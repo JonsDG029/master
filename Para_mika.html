@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti ❤️</title>
+    
+    <!-- Fuente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe6e6;
+            font-family: 'Dancing Script', cursive;
+            background-image: url('https://www.transparenttextures.com/patterns/hearts.png'), 
+                              url('https://cdn.pixabay.com/photo/2016/11/29/04/17/heart-1867322_1280.jpg'); /* Fondo de corazones */
+            background-size: cover;
+            background-position: center;
+        }
+        h1 {
+            color: #ff4d4d;
+            padding: 20px;
+            max-width: 80%;
+            margin: auto;
+            font-size: 32px;
+        }
+        p {
+            font-size: 22px;
+            color: #333;
+        }
+        img {
+            width: 300px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+            font-family: 'Dancing Script', cursive;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        .heart-button {
+            font-size: 20px;
+            padding: 15px 25px;
+            border-radius: 50px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: 'Dancing Script', cursive;
+            position: relative;
+        }
+        .heart-button:after {
+            content: " ❤️";
+        }
+        /* Mensaje Secreto */
+        .secreto {
+            font-size: 14px;
+            color: #ff9999;
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            opacity: 0.8;
+        }
+        /* Corazón oculto */
+        .hidden-heart {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 20px;
+            color: #ff4d4d;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+        .hidden-heart:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Para aquella persona que hace que cada despertar sea lo más lindo del mundo ❤️</h1>
+    
+    <p>Y con la ayuda de chatGPT aquí está el pequeño detalle que tanto esperaste mi amor, espero que te guste jsjsjsjs</p>
+
+    <!-- Botón de Play con corazones -->
+    <button class="heart-button" onclick="reproducirMusica()">Reproducir Música</button>
+
+    <!-- Audio (Big White Bed de AJR) -->
+    <audio id="musica" loop>
+        <source src="https://www.dropbox.com/scl/fi/inscgl4yfjtzh3l6jplff/AJR-Big-White-Bed-Official-Audio.mp3?rlkey=76nxy53ck5q8p58rv3jpbn794&st=dim6be0e&dl=1" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+    
+    <br><br>
+
+    <!-- Botón con solo emoji 😳 -->
+    <button onclick="mostrarImagen()">😳</button>
+    
+    <br>
+    
+    <!-- Imagen secreta (Dibujo) -->
+    <img id="imagen-secreta" src="https://i.postimg.cc/HWKb1nZX/Whats-App-Image-2025-02-14-at-12-17-43-PM.jpg" 
+         alt="Dibujo especial" style="display: none; width: 300px; border-radius: 10px;">
+
+    <script>
+        function mostrarImagen() {
+            document.getElementById("imagen-secreta").style.display = "block";
+        }
+        
+        function reproducirMusica() {
+            var musica = document.getElementById("musica");
+            if (musica.paused) {
+                musica.play();
+            } else {
+                musica.pause();
+            }
+        }
+        
+        function mostrarMensaje() {
+            alert("Este detalle fue hecho con amor y un poquito de magia de ChatGPT ❤️ -Jonás");
+        }
+    </script>
+
+    <br>
+
+    <!-- Texto en lugar de botón -->
+    <p style="font-size: 24px; color: #ff4d4d; font-weight: bold;">Eres todo lo que quiero 💖</p>
+
+    <!-- Mensaje Secreto -->
+    <p class="secreto">Te amo Mika 💕</p>
+
+    <!-- Corazón escondido -->
+    <p class="hidden-heart" onclick="mostrarMensaje()">❤️</p>
+
+</body>
+</html>
